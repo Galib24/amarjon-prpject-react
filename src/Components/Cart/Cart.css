@@ -1,9 +1,25 @@
-.cart{
-    background-color: rgba(255, 153, 0, 0.3);;
+.cart {
+    background-color: rgba(255, 153, 0, 0.3);
+    ;
     padding: 25px;
     position: sticky;
     top: 0;
 }
-.cart p{
+
+.cart p {
     font-size: 17px;
+}
+
+.btn-clear-cart {
+
+    width: 90%;
+    height: 50px;
+    font-size: 21px;
+    margin: 10px auto;
+    background: #FF3030;
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
