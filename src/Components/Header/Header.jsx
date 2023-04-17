@@ -4,7 +4,14 @@ import logo from '../../images/Logo.svg';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 const Header = () => {
-  const {user} = useContext(AuthContext)
+  const {user,logOut} = useContext(AuthContext);
+  console.log(user);
+  const handleLogout = ()=>{
+    logOut()
+    .then(result =>{})
+    .catch(error => console.error(error))
+
+  }
     return (
         <nav className='header'>
           <img src={logo} alt="" />
@@ -14,7 +21,7 @@ const Header = () => {
           <Link to="/inventory">inventory</Link>
           <Link to="/login">Login</Link>
           <Link to="/signUp">Sign Up</Link>
-          {user && <span>Welcome {user.email}</span> }
+          {user && <span className='text-white'>Welcome {user.email} <button onClick={handleLogout}>Log Out</button> </span> }
           </div>
         </nav>
     );
