@@ -16,3 +16,21 @@
  * 5) set the provider
  * 
  * **/ 
+
+// hosting 
+/****
+ * 1)one time per computer install
+ * 2) firebase login
+ * 3) for each project one time
+ * 4) proceed
+ * 5) hosting: firebase (up and down arrow) use space bar to select
+ * 6) existing project
+ * 7) select the project carefully
+ * 8) which project as public directory: dist 
+ * 9) single page application: yes
+ * 10)continuous deployment: no
+ * for every time deploy
+ * 1)npm run build
+ * 2) firebase deploy
+ * 
+ * */ 
