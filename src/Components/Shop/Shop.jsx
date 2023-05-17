@@ -30,11 +30,20 @@ const Shop = () => {
      * 
      * *****/
 
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/products')
+    //         .then(res => res.json())
+    //         .then(data => setProducts(data))
+    // }, []);
+
+    useEffect(()=>{
+        async function fetchData(){
+            const response = await fetch(`http://localhost:5000/products?page=${currentsPage}&limit=${itemsPerPage}`);
+            const data = await response.json();
+            setProducts(data);
+        }
+        fetchData();
+    }, [currentsPage, itemsPerPage])
 
     useEffect(() => {
         // console.log("products dependency", products);
@@ -87,7 +96,7 @@ const Shop = () => {
         setCart([]);
         deleteShoppingCart();
     }
-    const options = [5, 10, 20];
+    const options = [5, 10, 15, 20];
     function handleSelectChange(event) {
         setItemsPerPage(parseInt(event.target.value));
         setCurrentPage(0);
